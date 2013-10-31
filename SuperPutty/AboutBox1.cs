@@ -36,7 +36,7 @@ namespace SuperPutty
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            this.labelVersion.Text = String.Format("Version {0} / patched by ngyuki", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.linkLabelCompany.Text = AssemblyCompany;
             this.linkLabelCompany2.Text = "http://code.google.com/p/superputty/";
