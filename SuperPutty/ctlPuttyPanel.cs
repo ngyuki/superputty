@@ -103,6 +103,7 @@ namespace SuperPutty
             this.m_AppPanel.ApplicationName = this.m_puttyStartInfo.Executable;
             this.m_AppPanel.ApplicationParameters = this.m_puttyStartInfo.Args;
             this.m_AppPanel.ApplicationWorkingDirectory = this.m_puttyStartInfo.WorkingDir;
+            this.m_AppPanel.ApplicationProtocol = this.m_Session.Proto;
             this.m_AppPanel.Location = new System.Drawing.Point(0, 0);
             this.m_AppPanel.Name = this.m_Session.SessionId; // "applicationControl1";
             this.m_AppPanel.Size = new System.Drawing.Size(this.Width, this.Height);

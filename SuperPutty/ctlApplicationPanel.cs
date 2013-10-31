@@ -32,6 +32,7 @@ using System.IO;
 using log4net;
 using System.Configuration;
 using SuperPutty.Utils;
+using SuperPutty.Data;
 using System.Text;
 
 namespace SuperPutty
@@ -56,6 +57,7 @@ namespace SuperPutty
         private string m_ApplicationParameters = "";
         private string m_ApplicationWorkingDirectory = "";
         private WindowActivator m_windowActivator = null;
+        private ConnectionProtocol m_ApplicationProtocol;
 
         internal PuttyClosedCallback m_CloseCallback;
 
@@ -80,6 +82,12 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         {
             get { return m_ApplicationWorkingDirectory; }
             set { m_ApplicationWorkingDirectory = value; }
+        }
+
+        public ConnectionProtocol ApplicationProtocol
+        {
+            get { return m_ApplicationProtocol; }
+            set { m_ApplicationProtocol = value; }
         }
 
         public IntPtr AppWindowHandle { get { return this.m_AppWin; } }
@@ -433,6 +441,11 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         {
             if (this.ExternalProcessCaptured)
             {
+                if (m_ApplicationProtocol == ConnectionProtocol.Mintty)
+                {
+                    NativeMethods.PostMessage(m_AppWin, NativeMethods.WM_CLOSE, 0, 0);
+                }
+
                 // Send WM_DESTROY instead of WM_CLOSE, so that the Client doesn't
                 // ask in the Background whether the session shall be closed.
                 // Otherwise an annoying beep is generated everytime a terminal session is closed.
