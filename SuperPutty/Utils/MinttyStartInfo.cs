@@ -44,7 +44,7 @@ namespace SuperPutty.Utils
             {
                 // login shell
                 // http://code.google.com/p/puttycyg/wiki/FAQ
-                this.Args = "-";
+                this.Args = "/bin/bash -l";
             }
         }
 
