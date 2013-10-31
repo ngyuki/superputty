@@ -99,6 +99,9 @@ namespace SuperPutty.Utils
                     case "-cygterm":
                         this.Protocol = ConnectionProtocol.Cygterm;
                         break;
+                    case "-mintty":
+                        this.Protocol = ConnectionProtocol.Mintty;
+                        break;
                     case "-scp":
                         this.UseScp = true;
                         break;
