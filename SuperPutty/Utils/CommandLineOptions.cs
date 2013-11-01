@@ -160,7 +160,14 @@ namespace SuperPutty.Utils
                     this.Host = connStr.Host;
                     this.Protocol = connStr.Protocol.GetValueOrDefault(this.Protocol.GetValueOrDefault(ConnectionProtocol.SSH));
                     this.Port = connStr.Port.GetValueOrDefault(this.Port.GetValueOrDefault(dlgEditSession.GetDefaultPort(this.Protocol.GetValueOrDefault())));
-                    sessionName = this.Host;
+                    if (this.Protocol == ConnectionProtocol.Mintty)
+                    {
+                        sessionName = "mintty";
+                    }
+                    else
+                    {
+                        sessionName = this.Host;
+                    }
                 }
                 else
                 {
