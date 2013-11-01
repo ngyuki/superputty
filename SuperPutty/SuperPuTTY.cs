@@ -531,6 +531,11 @@ namespace SuperPutty
                 {
                     SuperPuTTY.OpenPuttySession(ssi.Session);
                 }
+
+                if (MainForm.WindowState == FormWindowState.Minimized)
+                {
+                    NativeMethods.ShowWindow(MainForm.Handle, NativeMethods.WindowShowStyle.Restore);
+                }
             }
         }
 
