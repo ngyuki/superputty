@@ -17,9 +17,7 @@ SuperPutty は PuTTY をタブ化するためのアプリケーションです�
 
 ## ダウンロード
 
-ビルド済みバイナリを下記で公開しています。
-
- - [SuperPutty - SkyDrive](http://sdrv.ms/1aMdYt2)
+ - [Releases](https://github.com/ngyuki/superputty/releases)
 
 ## ライセンス
 
